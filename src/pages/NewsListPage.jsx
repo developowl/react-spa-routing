@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useNewsStore from "../stores/store";
+import useNewsStore from "../stores/newsStore";
 import {
   PageContainer,
   HeaderTitle,
