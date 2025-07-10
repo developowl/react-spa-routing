@@ -1,12 +1,27 @@
-import './App.css'
+import { lightTheme, darkTheme, GlobalStyle } from "./App.styled.js";
+import { ThemeProvider } from "styled-components";
+import { Routes, Route } from "react-router-dom";
+import Gnb from "./components/headers/Gnb";
+import NewsListPage from "./pages/newsListPage";
+import useThemeStore from "./stores/themeStore.js";
 
 function App() {
+  const { theme } = useThemeStore();
+  const currentTheme = theme === "light" ? lightTheme : darkTheme;
 
   return (
     <>
-      <h1>그리디 미션 : 뉴스 웹 뷰어 시이작!</h1>
+      <ThemeProvider theme={currentTheme}>
+        <GlobalStyle />
+        <Gnb />
+        <main>
+          <Routes>
+            <Route path="/news/:category" element={<NewsListPage />} />
+          </Routes>
+        </main>
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
