@@ -38,3 +38,24 @@ export const NoResultsMessage = styled.div`
   color: #777;
   grid-column: 1 / -1;
 `;
+
+export const NotFoundPageContainer = styled.a`
+  display: flex;
+  justify-content: center;
+`
+
+export const NotFoundPageButton = styled.div`
+  text-align: center;
+  display: inline-block;
+  padding: 20px 40px;
+  margin-top: 200px;
+  background-color: #5e11caff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #5a29a4ff;
+  }
+`;
