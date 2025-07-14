@@ -23,7 +23,7 @@ export const CardLinkWrapper = styled.a`
   justify-content: space-between;
 `;
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.article`
   border: 1px solid ${({ theme }) => theme.cardBorder};
   border-radius: 8px;
   padding: 15px;

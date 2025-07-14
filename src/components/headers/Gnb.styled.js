@@ -59,7 +59,7 @@ export const NavList = styled.ul`
   }
 `;
 
-export const ThemeSwitchContainer = styled.div`
+export const ThemeSwitchContainer = styled.button`
   display: flex;
   position: relative;
   right: -20%;
