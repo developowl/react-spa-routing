@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { fetchNewsByCategory } from '../api/newsApi';
+import { create } from "zustand";
+import { fetchNewsByCategory } from "../api/newsApi";
 
 const useNewsStore = create((set) => ({
   articles: [],

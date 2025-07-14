@@ -4,7 +4,6 @@ import NewsListPage from "./pages/newsListPage";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function App() {
-
   return (
     <>
       <Gnb />

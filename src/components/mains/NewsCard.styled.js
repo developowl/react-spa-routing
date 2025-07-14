@@ -5,12 +5,14 @@ export const CardLinkWrapper = styled.a`
   color: inherit;
   display: block;
   margin-bottom: 20px;
-  border: 1px solid ${props => props.theme.cardBorder};
+  border: 1px solid ${(props) => props.theme.cardBorder};
   border-radius: 8px;
-  background-color: ${props => props.theme.cardBg};
+  background-color: ${(props) => props.theme.cardBg};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);

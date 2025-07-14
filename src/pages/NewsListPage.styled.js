@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PageContainer = styled.main`
   padding: 20px;
@@ -42,7 +42,7 @@ export const NoResultsMessage = styled.p`
 export const NotFoundPageContainer = styled.section`
   display: flex;
   justify-content: center;
-`
+`;
 
 export const NotFoundPageButton = styled.a`
   text-align: center;

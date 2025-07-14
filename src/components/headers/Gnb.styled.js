@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 
 const breakpoints = {
-  mobile: '768px',
-}
+  mobile: "768px",
+};
 
 export const NavContainer = styled.nav`
   display: flex;
@@ -63,14 +63,14 @@ export const ThemeSwitchContainer = styled.button`
   display: flex;
   position: relative;
   right: -20%;
-  width: 60px; 
+  width: 60px;
   height: 30px;
-  background-color: ${props => props.theme.gnbLinkActive};
+  background-color: ${(props) => props.theme.gnbLinkActive};
   border-radius: 15px;
   cursor: pointer;
   overflow: hidden;
 
-   @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${breakpoints.mobile}) {
     right: auto;
     position: relative;
     margin-top: 15px;
@@ -82,15 +82,15 @@ export const Slider = styled.div`
   position: absolute;
   width: 26px;
   height: 26px;
-  background-color: ${props => props.theme.cardBg};
-  border-radius: 50%; 
+  background-color: ${(props) => props.theme.cardBg};
+  border-radius: 50%;
   top: 2px;
   transition: transform 0.3s ease-in-out;
 
-  ${props => props.$isDarkMode ?
-    'transform: translateX(30px);' :
-    'transform: translateX(2px);'
-  }
+  ${(props) =>
+    props.$isDarkMode
+      ? "transform: translateX(30px);"
+      : "transform: translateX(2px);"}
 `;
 
 export const IconWrapper = styled.div`
@@ -103,13 +103,13 @@ export const IconWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   z-index: 1;
-  color: ${props => props.theme.textColor};
+  color: ${(props) => props.theme.textColor};
 `;
 
 export const SunIcon = styled(BsSunFill)`
   font-size: 18px;
-  color: ${props => props.theme.gnbBg === '#e9ecef' ? 'gold' : 'white'};
-  opacity: ${props => props.$isDarkMode ? 0 : 1};
+  color: ${(props) => (props.theme.gnbBg === "#e9ecef" ? "gold" : "white")};
+  opacity: ${(props) => (props.$isDarkMode ? 0 : 1)};
   transition: opacity 0.3s ease;
 
   @media (max-width: ${breakpoints.mobile}) {
@@ -119,8 +119,9 @@ export const SunIcon = styled(BsSunFill)`
 
 export const MoonIcon = styled(BsMoonFill)`
   font-size: 18px;
-  color: ${props => props.theme.textColor === '#f0f2f5' ? 'silver' : 'black'};
-  opacity: ${props => props.$isDarkMode ? 1 : 0};
+  color: ${(props) =>
+    props.theme.textColor === "#f0f2f5" ? "silver" : "black"};
+  opacity: ${(props) => (props.$isDarkMode ? 1 : 0)};
   transition: opacity 0.3s ease;
 
   @media (max-width: ${breakpoints.mobile}) {
