@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useNewsStore from "../stores/newsStore";
 import {
   PageContainer,
@@ -13,9 +13,26 @@ import NewsCard from "../components/mains/NewsCard";
 function NewsListPage() {
   const { category: urlCategory } = useParams();
   const { articles, loading, error, fetchNews } = useNewsStore();
+  const navigate = useNavigate();
+
+  const VALID_CATEGORIES = [
+    "all", // 뉴스 카테고리 표시(general -> all) 좀 더 정확한 전달을 위해 카테고리명 변경
+    "business",
+    "entertainment",
+    "health",
+    "science",
+    "sports",
+    "technology",
+  ];
+
   const category = urlCategory || "general";
 
   useEffect(() => {
+    if (urlCategory && !VALID_CATEGORIES.includes(urlCategory)) {
+      navigate("/not-found", { replace: true });
+      return;
+    }
+
     fetchNews(category);
   }, [category, fetchNews]);
 
