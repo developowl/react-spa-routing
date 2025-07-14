@@ -13,31 +13,26 @@ import useThemeStore from "../../stores/themeStore.js";
 function Gnb() {
   const { theme, toggleTheme } = useThemeStore();
   const isDarkMode = theme === "dark";
+  const categories = [
+    { name: "All", path: "general" },
+    { name: "Business", path: "business" },
+    { name: "Entertainment", path: "entertainment" },
+    { name: "Health", path: "health" },
+    { name: "Science", path: "science" },
+    { name: "Sports", path: "sports" },
+    { name: "Technology", path: "technology" },
+  ];
 
   return (
     <NavContainer>
       <NavList>
-        <li>
-          <StyledNavLink to="/news/all">All</StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink to="/news/business">Business</StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink to="/news/entertainment">Entertainment</StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink to="/news/health">Health</StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink to="/news/science">Science</StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink to="/news/sports">Sports</StyledNavLink>
-        </li>
-        <li>
-          <StyledNavLink to="/news/technology">Technology</StyledNavLink>
-        </li>
+        {categories.map((categoryItem) => (
+          <li key={categoryItem.path}>
+            <StyledNavLink to={`/news/${categoryItem.path}`}>
+              {categoryItem.name}
+            </StyledNavLink>
+          </li>
+        ))}
       </NavList>
       <ThemeSwitchContainer onClick={toggleTheme}>
         <IconWrapper>
