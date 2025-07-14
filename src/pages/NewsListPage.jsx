@@ -11,15 +11,18 @@ import {
 import NewsCard from "../components/mains/NewsCard";
 
 function NewsListPage() {
-  const { category } = useParams();
+  const { category: urlCategory } = useParams();
   const { articles, loading, error, fetchNews } = useNewsStore();
+  const category = urlCategory || "general";
 
   useEffect(() => {
     fetchNews(category);
   }, [category, fetchNews]);
 
   const displayCategoryName =
-    category.charAt(0).toUpperCase() + category.slice(1);
+    category === "general"
+      ? "All"
+      : category.charAt(0).toUpperCase() + category.slice(1);
 
   if (loading)
     return (
