@@ -16,8 +16,7 @@ function NewsListPage() {
   const navigate = useNavigate();
 
   const VALID_CATEGORIES = [
-    "all", // 뉴스 카테고리 표시(general -> all) 좀 더 정확한 전달을 위해 카테고리명 변경
-    "business",
+    "general",
     "entertainment",
     "health",
     "science",
