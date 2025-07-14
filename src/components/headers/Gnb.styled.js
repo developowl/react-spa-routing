@@ -80,8 +80,8 @@ export const ThemeSwitchContainer = styled.button`
 
 export const Slider = styled.div`
   position: absolute;
-  width: 26px;
-  height: 26px;
+  width: 23px;
+  height: 23px;
   background-color: ${(props) => props.theme.cardBg};
   border-radius: 50%;
   top: 2px;
@@ -89,8 +89,8 @@ export const Slider = styled.div`
 
   ${(props) =>
     props.$isDarkMode
-      ? "transform: translateX(30px);"
-      : "transform: translateX(2px);"}
+      ? "transform: translateX(24px);"
+      : "transform: translateX(-4px);"}
 `;
 
 export const IconWrapper = styled.div`
